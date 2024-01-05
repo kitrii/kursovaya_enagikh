@@ -13,4 +13,6 @@ module client.javakur {
 
     opens client.javakur to javafx.fxml;
     exports client.javakur;
+    exports client.javakur.controllers;
+    opens client.javakur.controllers to javafx.fxml;
 }
