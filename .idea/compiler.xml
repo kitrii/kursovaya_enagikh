@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="javaKur" />
+        <module name="server" />
       </profile>
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
@@ -16,5 +17,8 @@
         <module name="javaServer.main" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="javaServer" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>

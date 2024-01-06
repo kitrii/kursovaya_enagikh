@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.javakur.controllers2.BondController">
+    <bottom>
+        <TableView fx:id="bondTableView" maxHeight="700.0" maxWidth="1200.0" prefHeight="700.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn fx:id="bondNameColumn" maxWidth="280.0" minWidth="100.0" prefWidth="232.0" text="Облигация" />
+                <TableColumn fx:id="maturityColumn" maxWidth="368.0" minWidth="100.0" prefWidth="164.0" text="Срок погашения" />
+                <TableColumn fx:id="nominalColumn" maxWidth="408.0" minWidth="100.0" prefWidth="171.0" text="Номинал" />
+                <TableColumn fx:id="couponSizeColumn" maxWidth="428.0" prefWidth="172.0" resizable="false" text="Размер купона" />
+                <TableColumn fx:id="numberOfCouponPeriodsColumn" maxWidth="300.0" prefWidth="239.0" text="Количество купонных периодов" />
+                <TableColumn fx:id="bondDurationColumn" prefWidth="221.0" text="Дюрация облигации" />
+            </columns>
+            <BorderPane.margin>
+                <Insets />
+            </BorderPane.margin>
+        </TableView>
+    </bottom>
+    <top>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button alignment="CENTER" cache="true" contentDisplay="CENTER" layoutX="268.0" layoutY="128.0" mnemonicParsing="false" onAction="#handlerBondsBtn" prefHeight="40.0" prefWidth="122.0" stylesheets="@../styles/MainStyle.css" text="Показать" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="268.0">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Button>
+                <TextField fx:id="searchCompany" layoutX="35.0" layoutY="85.0" prefHeight="42.0" prefWidth="199.0" promptText="Найти облигацию" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="40.0">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </TextField>
+                <Label layoutX="500.0" layoutY="50.0" text="Облигации" AnchorPane.leftAnchor="500.0" AnchorPane.topAnchor="50.0">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="30.0" />
+                    </font>
+                </Label>
+                <CheckBox fx:id="sortBondBtn" layoutX="490.0" layoutY="100.0" mnemonicParsing="false" text="Z to A" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="110.0">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </CheckBox>
+                <Label layoutX="586.0" layoutY="47.0" text="Сортировка" AnchorPane.bottomAnchor="90.0" AnchorPane.rightAnchor="85.0">
+                    <font>
+                        <Font name="Chalkboard SE Light" size="20.0" />
+                    </font>
+                </Label>
+                <Button layoutX="708.0" layoutY="128.0" mnemonicParsing="false" onAction="#handleDeleteBond" stylesheets="@../styles/MainStyle.css" text="Удалить" />
+                <Button layoutX="577.0" layoutY="128.0" mnemonicParsing="false" onAction="#handleAddBondPage" stylesheets="@../styles/MainStyle.css" text="Добавить" />
+            </children>
+        </AnchorPane>
+    </top>
+</BorderPane>

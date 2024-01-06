@@ -12,4 +12,11 @@ public class BondService {
         bond.setBondName(name);
         return bond;
     }
+
+    public Bond[] getBondsByUserName(String userName){
+        Bond[] results = new Bond[]{};
+        return results;
+    }
+
+    public void addBond(){}
 }
