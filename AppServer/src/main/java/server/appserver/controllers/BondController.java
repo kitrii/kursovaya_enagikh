@@ -58,7 +58,7 @@ public class BondController {
      * @param ownerName
      */
     @GetMapping("/ownerName")
-    public ResponseEntity<List<Bond>> getBondsByOwnerId(@RequestParam(name = "ownerName") String ownerName) {
+    public ResponseEntity<List<Bond>> getBondsByOwnerName(@RequestParam(name = "ownerName") String ownerName) {
         List<BondEntity> DbBonds = bondService.getBondsByOwnerName(ownerName);
         List<Bond> bonds = BondMapper.BondEntityToBondMapper(DbBonds);
         return new ResponseEntity<>(bonds, HttpStatus.OK);
@@ -82,7 +82,8 @@ public class BondController {
      *
      */
     @GetMapping("/delete")
-    public ResponseEntity<?> deleteBondByBondIdOwnerId(@RequestParam(name = "name") int bondId, int ownerId) {
+    public ResponseEntity<?> deleteBondByBondIdOwnerId(@RequestParam(name = "bondId") int bondId,
+                                                       @RequestParam(name = "ownerId") int ownerId) {
         bondService.deleteBondByOwnerIdBondId(bondId, ownerId);
         return new ResponseEntity<>(HttpStatus.OK);
     }

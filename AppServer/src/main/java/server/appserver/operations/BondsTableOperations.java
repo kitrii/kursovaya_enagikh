@@ -1,10 +1,10 @@
 package server.appserver.operations;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 import server.appserver.entities.BondEntity;
 
 import java.util.List;
@@ -54,18 +54,19 @@ public class BondsTableOperations {
         sessionRead.close();
         return bonds;
     }
-    public List<BondEntity> deleteBondByBondIdOwnerId(int bondId, int ownerId) {
+    public void deleteBondByBondIdOwnerId(int bondId, int ownerId) {
         Configuration conf = new Configuration().configure();
         conf.addAnnotatedClass(BondEntity.class);
-
         StandardServiceRegistryBuilder sBuilder = new StandardServiceRegistryBuilder()
                 .applySettings(conf.getProperties());
         SessionFactory sf = conf.buildSessionFactory(sBuilder.build());
-        Session sessionRead = sf.openSession();
-        Transaction transaction = sessionRead.beginTransaction();
-        List<BondEntity> bonds = sessionRead.createQuery("from BondEntity").getResultList();
+        Session session = sf.openSession();
+        Transaction transaction = session.beginTransaction();
+        Query query = session.createQuery("DELETE FROM BondEntity WHERE bondid = :bondid and ownerid = :ownerid");
+        query.setParameter("bondid", bondId);
+        query.setParameter("ownerid", ownerId);
+        query.executeUpdate();
         transaction.commit();
-        sessionRead.close();
-        return bonds;
+        session.close();
     }
 }
