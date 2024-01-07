@@ -10,7 +10,7 @@ import server.appserver.entities.BondEntity;
 import java.util.List;
 
 public class BondsTableOperations {
-    public void saveBondInfo(BondEntity bond) {
+    public void addBond(BondEntity bond) {
         Configuration conf = new Configuration().configure();
         conf.addAnnotatedClass(BondEntity.class);
 
@@ -63,6 +63,26 @@ public class BondsTableOperations {
         Session session = sf.openSession();
         Transaction transaction = session.beginTransaction();
         Query query = session.createQuery("DELETE FROM BondEntity WHERE bondid = :bondid and ownerid = :ownerid");
+        query.setParameter("bondid", bondId);
+        query.setParameter("ownerid", ownerId);
+        query.executeUpdate();
+        transaction.commit();
+        session.close();
+    }
+    public void editBondByBondIdOwnerId(int bondId, int ownerId, BondEntity bond) {
+        Configuration conf = new Configuration().configure();
+        conf.addAnnotatedClass(BondEntity.class);
+        StandardServiceRegistryBuilder sBuilder = new StandardServiceRegistryBuilder()
+                .applySettings(conf.getProperties());
+        SessionFactory sf = conf.buildSessionFactory(sBuilder.build());
+        Session session = sf.openSession();
+        Transaction transaction = session.beginTransaction();
+        Query query = session.createQuery("UPDATE BondEntity SET " +
+                "repaymentperiod = :repaymentperiod, couponrate = :couponrate, " +
+                "yieldtomaturity = :yieldtomaturity WHERE bondid = :bondid and ownerid = :ownerid");
+        query.setParameter("repaymentperiod", bond.repaymentperiod);
+        query.setParameter("couponrate", bond.couponrate);
+        query.setParameter("yieldtomaturity", bond.yieldtomaturity);
         query.setParameter("bondid", bondId);
         query.setParameter("ownerid", ownerId);
         query.executeUpdate();

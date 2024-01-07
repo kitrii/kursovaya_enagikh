@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import server.appserver.calculation.Calculation;
 import server.appserver.entities.BondEntity;
 import server.appserver.mapper.BondMapper;
 import server.appserver.models.Bond;
@@ -72,7 +73,7 @@ public class BondController {
     @PostMapping("/add")
     public ResponseEntity<?> addBond(@RequestBody BondEntity bond) {
         Map<String, Object> map = new HashMap<>();
-        bondService.addBond(bond);
+        bondService.addBondInfo(bond);
         map.put("success", true);
         return new ResponseEntity<>(map, HttpStatus.OK);
     }
@@ -94,9 +95,9 @@ public class BondController {
      * @param ownerId
      */
     @GetMapping("/calculateDuration")
-    public ResponseEntity<Long> calculateDurationByOwnerId(@RequestParam(name = "ownerId") int ownerId) {
+    public ResponseEntity<Float> calculateDurationByOwnerId(@RequestParam(name = "ownerId") int ownerId) {
         List<BondEntity> bonds = bondService.getBondsByOwnerId(ownerId);
-        long duration = 21;
+        float duration = Calculation.calculateDuration(bonds);
         return new ResponseEntity<>(duration, HttpStatus.OK);
     }
 
@@ -105,10 +106,10 @@ public class BondController {
      *
      * @param bond
      */
-    @PutMapping("/edit")
+    @PatchMapping("/edit")
     public ResponseEntity<?> editBondInfo(@RequestBody BondEntity bond) {
         Map<String, Object> map = new HashMap<>();
-        bondService.addBond(bond);
+        bondService.editBondInfo(bond);
         map.put("success", true);
         return new ResponseEntity<>(map, HttpStatus.OK);
     }

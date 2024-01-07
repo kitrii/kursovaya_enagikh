@@ -12,7 +12,8 @@ public class BondMapper {
         List<Bond> bonds = new ArrayList<>();
         for (BondEntity bond: BondEntities) {
             Bond vBond = new Bond();
-            vBond.setValues(bond.bondname, bond.bondid, bond.repaymentperiod, bond.couponrate,
+            vBond.setValues(bond.bondname, bond.bondid, bond.nominalcost, bond.couponfrequency,
+                    bond.repaymentperiod, bond.couponrate,
                     bond.yieldtomaturity, bond.ownerid, bond.owner);
             bonds.add(vBond);
         }

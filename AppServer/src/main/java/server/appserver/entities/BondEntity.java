@@ -11,6 +11,10 @@ public class BondEntity {
     @Column(nullable = false)
     public String bondname;
     @Column
+    public long nominalcost;
+    @Column
+    public long couponfrequency;
+    @Column
     public int repaymentperiod;
     @Column
     public int couponrate;
@@ -22,10 +26,13 @@ public class BondEntity {
     public String owner;
 
 
-    public void setValues(String bondName, int bondId, int repaymentPeriod, int couponRate,
+    public void setValues(String bondName, int bondId, long nominalCost,
+                          long couponFrequency, int repaymentPeriod, int couponRate,
                           float yieldToMaturity, int ownerId, String owner){
         this.bondname = bondName;
         this.bondid = bondId;
+        this.nominalcost = nominalCost;
+        this.couponfrequency = couponFrequency;
         this.repaymentperiod = repaymentPeriod;
         this.couponrate = couponRate;
         this.yieldtomaturity = yieldToMaturity;

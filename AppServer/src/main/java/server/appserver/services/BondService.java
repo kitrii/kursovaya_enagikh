@@ -1,14 +1,11 @@
 package server.appserver.services;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import server.appserver.entities.BondEntity;
-import server.appserver.models.Bond;
 import server.appserver.operations.BondsTableOperations;
 
-import java.util.Date;
 import java.util.List;
 
 @Service
@@ -39,7 +36,13 @@ public class BondService {
     }
 
     @Transactional
-    public void addBond(BondEntity bond){
-        BTO.saveBondInfo(bond);
+    public void addBondInfo(BondEntity bond){
+        BTO.addBond(bond);
+    }
+    @Transactional
+    public void editBondInfo(BondEntity bond){
+        int ownerId = bond.ownerid;
+        int bondId = bond.bondid;
+        BTO.editBondByBondIdOwnerId(bondId, ownerId, bond);
     }
 }
