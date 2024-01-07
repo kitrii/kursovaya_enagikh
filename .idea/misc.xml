@@ -9,7 +9,13 @@
       <list>
         <option value="$PROJECT_DIR$/javaKur/pom.xml" />
         <option value="$PROJECT_DIR$/javaServer/pom.xml" />
+        <option value="$PROJECT_DIR$/AppServer/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/javaServer/pom.xml" />
+      </set>
     </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />
   </component>
