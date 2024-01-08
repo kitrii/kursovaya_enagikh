@@ -1,4 +1,4 @@
-module client.javakur {
+module client.appclient {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
@@ -10,9 +10,11 @@ module client.javakur {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires com.google.gson;
 
     opens client to javafx.fxml;
     exports client;
-    exports client.controllers;
     opens client.controllers to javafx.fxml;
+    exports client.controllers;
+
 }

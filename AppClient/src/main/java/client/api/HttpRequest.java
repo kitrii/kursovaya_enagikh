@@ -1,4 +1,4 @@
-package client.javakur.utils.api;
+package client.api;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="javaKur" />
         <module name="AppServer" />
+        <module name="AppClient" />
       </profile>
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />

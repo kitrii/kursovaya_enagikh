@@ -1,4 +1,4 @@
-package client.javakur.controllers;
+package client.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
