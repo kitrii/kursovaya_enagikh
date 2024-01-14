@@ -1,7 +1,4 @@
 package server.appserver.models;
-
-import jakarta.persistence.Column;
-
 public class Bond {
     public String bondName;
     public int bondId;
@@ -14,8 +11,7 @@ public class Bond {
     public int ownerId;
 
     public String ownerName;
-    public void setBondName(String bondName){
-        this.bondName = bondName;}
+
     public void setValues(String bondName, int bondId, long nominalCost,
                           long couponFrequency, int repaymentPeriod,
                           int couponRate, float yieldToMaturity, int ownerId,

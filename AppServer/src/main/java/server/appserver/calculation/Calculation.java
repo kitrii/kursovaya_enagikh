@@ -6,11 +6,10 @@ import java.util.List;
 
 public class Calculation {
 
-
     public static float calculateDuration(List<BondEntity> bonds){
-        final int bondPart = 1;
+        final float bondPart = 1;
         float portfolioDuration = 0;
-        int bondCount = bonds.size();
+        float bondCount = bonds.size();
 
         for (BondEntity bond: bonds){
             long N = bond.nominalcost;

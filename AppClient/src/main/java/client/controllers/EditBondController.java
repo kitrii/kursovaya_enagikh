@@ -1,15 +1,14 @@
 package client.controllers;
+
 import client.api.Api;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
+public class EditBondController extends MenuController{
 
-public class AddBondController extends MenuController {
-    protected Stage AddBondStage;
     protected Api api = new Api();
     @FXML
-    TextField bondNameField;
+    TextField bondNameField =  new TextField("");
     @FXML
     TextField bondIdField;
     @FXML
@@ -25,9 +24,7 @@ public class AddBondController extends MenuController {
     @FXML
     TextField ownerIdField;
     @FXML
-    TextField ownerNameField;
-
-    /** Инициализация полей */
+    TextField ownerNameField = new TextField("");
     @FXML
     public void initialize() {
         bondNameField.setText(null);
@@ -41,21 +38,17 @@ public class AddBondController extends MenuController {
         ownerNameField.setText(null);
     }
     @FXML
-    public void handleAddBond() {
-        boolean addBondResult = api.addBond(
+    public void handleEditBond(){
+        api.editBond(
                 bondIdField.getText(),
                 bondNameField.getText(),
+                ownerIdField.getText(),
+                ownerNameField.getText(),
                 nominalcostField.getText(),
                 couponRateField.getText(),
                 repaymentPeriodField.getText(),
                 couponfrequencyField.getText(),
-                yieldToMaturityField.getText(),
-                ownerIdField.getText(),
-                ownerNameField.getText());
+                yieldToMaturityField.getText());
 
-        if (addBondResult) {
-            AddBondStage.close();
-        }
     }
 }
-
