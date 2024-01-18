@@ -6,8 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="javaKur" />
-        <module name="server" />
+        <module name="AppServer" />
+        <module name="AppClient" />
       </profile>
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
@@ -18,7 +18,14 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="javaKur" target="19" />
       <module name="javaServer" target="17" />
+      <module name="server" target="19" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="AppServer" options="" />
+    </option>
   </component>
 </project>
