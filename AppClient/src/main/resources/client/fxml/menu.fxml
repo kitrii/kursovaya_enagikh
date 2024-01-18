@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="258.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controllers.MenuController">
+    <children>
+        <Label layoutX="150.0" layoutY="10.0" text="ГЛАВНОЕ МЕНЮ" />
+        <Button fx:id="addButton" layoutX="10.0" layoutY="35.0" mnemonicParsing="false" onAction="#switchToAddBondPage" text="Добавить информацию об облигации" />
+        <Button fx:id="deleteButton" layoutX="10.0" layoutY="70.0" mnemonicParsing="false" onAction="#switchToDeleteBondPage" text="Удалить информацию об облигации" />
+        <Button fx:id="editButton" layoutX="10.0" layoutY="105.0" mnemonicParsing="false" onAction="#switchToEditBondPage" text="Редактировать информацию об облигации" />
+        <Button fx:id="getAllButton" layoutX="10.0" layoutY="140.0" mnemonicParsing="false" onAction="#switchToGetAllBondsPage" text="Получить информацию обо всех облигациях" />
+        <Button fx:id="getPortfolioButton" layoutX="10.0" layoutY="175.0" mnemonicParsing="false" onAction="#switchToGetPortfolioBondsPage" text="Получить портфель пользователя" />
+        <Button fx:id="durationButton" layoutX="10.0" layoutY="210.0" mnemonicParsing="false" onAction="#switchToCalculatePortfolioDurationPage" text="Рассчитать дюрацию портфеля пользователя" />
+    </children>
+</AnchorPane>
