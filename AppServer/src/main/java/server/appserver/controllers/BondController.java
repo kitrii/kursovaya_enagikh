@@ -43,7 +43,7 @@ public class BondController {
         return new ResponseEntity<>(bonds, HttpStatus.OK);
     }
 
-    /**Получить информацию о всех облигациях по id обладателя*/
+    /**Получить информацию о всех облигациях по имени обладателя*/
     @GetMapping("/ownerName")
     public ResponseEntity<List<Bond>> getBondsByOwnerName(@RequestParam(name = "ownerName") String ownerName) {
         List<BondEntity> DbBonds = bondService.getBondsByOwnerName(ownerName);
