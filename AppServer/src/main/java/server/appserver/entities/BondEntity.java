@@ -12,7 +12,7 @@ public class BondEntity {
     public String bondname;
     @Column
     public long nominalcost;
-    @Column
+    @ Column
     public long couponfrequency;
     @Column
     public int repaymentperiod;

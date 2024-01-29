@@ -29,7 +29,7 @@ public class AddBondController extends MenuController {
 
     /** Инициализация полей */
     @FXML
-    public void initialize() {
+    private void initialize() {
         bondNameField.setText(null);
         bondIdField.setText(null);
         nominalcostField.setText(null);
@@ -41,7 +41,11 @@ public class AddBondController extends MenuController {
         ownerNameField.setText(null);
     }
     @FXML
+<<<<<<< HEAD
     public void handleAddBond() {
+=======
+    private void handleAddBond() {
+>>>>>>> 726a48c (add gui for get all bonds)
         boolean addBondResult = api.addBond(
                 bondIdField.getText(),
                 bondNameField.getText(),

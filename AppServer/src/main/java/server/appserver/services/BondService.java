@@ -34,7 +34,6 @@ public class BondService {
     public void deleteBondByOwnerIdBondId(int bondId, int ownerId){
         BTO.deleteBondByBondIdOwnerId(bondId, ownerId);
     }
-
     @Transactional
     public void addBondInfo(BondEntity bond){
         BTO.addBond(bond);

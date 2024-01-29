@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<<<<<<< HEAD
 <?import javafx.scene.control.*?>
+=======
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+>>>>>>> 726a48c (add gui for get all bonds)
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
@@ -19,6 +26,14 @@
             <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
             <RowConstraints />
          <RowConstraints />
+<<<<<<< HEAD
+=======
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+>>>>>>> 726a48c (add gui for get all bonds)
         </rowConstraints>
         <Label text="Id облигации" GridPane.rowIndex="0" />
         <Label text="Id владельца" GridPane.rowIndex="7" />
@@ -27,5 +42,21 @@
     </GridPane>
     <HBox layoutX="150.0" layoutY="538.0" prefHeight="31.0" prefWidth="288.0" spacing="50.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="139.0" AnchorPane.rightAnchor="90.0" />
     <Button layoutX="310.0" layoutY="375.0" mnemonicParsing="false" onAction="#switchToMenuPage" prefHeight="30.0" prefWidth="200.0" text="Вернуться на Главное Меню" />
+<<<<<<< HEAD
      <Button defaultButton="true" layoutX="170.0" layoutY="175.0" mnemonicParsing="false" onAction="#handleDeleteBond" prefHeight="31.0" prefWidth="151.0" text="Удалить" />
+=======
+     <Button alignment="CENTER" cache="true" defaultButton="true" layoutX="170.0" layoutY="175.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#handleDeleteBond" prefHeight="31.0" prefWidth="151.0" text="Удалить">
+      <font>
+         <Font name="System Font" size="13.0" />
+      </font>
+      <opaqueInsets>
+         <Insets />
+      </opaqueInsets>
+      <effect>
+         <ColorAdjust brightness="-0.12" contrast="0.12" hue="0.21" saturation="-0.07" />
+      </effect>
+      <cursor>
+         <Cursor fx:constant="DEFAULT" />
+      </cursor></Button>
+>>>>>>> 726a48c (add gui for get all bonds)
 </AnchorPane>

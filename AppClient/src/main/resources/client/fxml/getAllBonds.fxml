@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<<<<<<< HEAD
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="624.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controllers.GetBondsController">
+=======
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="624.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="client.controllers.GetBondsController">
+>>>>>>> 726a48c (add gui for get all bonds)
         <TableView fx:id="bondsTableView" layoutX="12.0" layoutY="62.0" prefHeight="324.0" prefWidth="600.0">
             <columns>
                 <!-- Колонки таблицы -->
@@ -24,6 +32,14 @@
                 <Font name="Verdana" size="20.0" />
             </font>
         </Label>
+<<<<<<< HEAD
         <Button fx:id="getInfoButton" layoutX="223.0" layoutY="400.0" mnemonicParsing="false" onAction="#handleGetBonds" text="Получить информацию" />
         <Button layoutX="410.0" layoutY="398.0" mnemonicParsing="false" onAction="#switchToMenuPage" prefHeight="30.0" prefWidth="200.0" text="Вернуться на Главное Меню" />
+=======
+        <Button fx:id="getInfoButton" defaultButton="true" layoutX="223.0" layoutY="400.0" mnemonicParsing="false" onAction="#handleGetBonds" prefHeight="30.0" prefWidth="160.0" text="Получить информацию" />
+        <Button layoutX="410.0" layoutY="398.0" mnemonicParsing="false" onAction="#switchToMenuPage" prefHeight="30.0" prefWidth="200.0" text="Вернуться на Главное Меню" />
+    <effect>
+        <ColorAdjust brightness="-0.12" contrast="0.12" hue="0.21" saturation="-0.07" />
+    </effect>
+>>>>>>> 726a48c (add gui for get all bonds)
 </AnchorPane>

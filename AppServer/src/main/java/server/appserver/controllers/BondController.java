@@ -28,7 +28,7 @@ public class BondController {
 
     /** Получить информацию о всех облигациях**/
     @GetMapping("/all")
-    public ResponseEntity<List<Bond>> getBonds() {
+    private ResponseEntity<List<Bond>> getBonds() {
         List<BondEntity> DbBonds = bondService.getAllBonds();
         List<Bond> bonds = BondMapper.BondEntityToBondMapper(DbBonds);
         return new ResponseEntity<>(bonds, HttpStatus.OK);
@@ -37,7 +37,7 @@ public class BondController {
 
     /**Получить информацию о всех облигациях по id обладателя*/
     @GetMapping("/ownerId")
-    public ResponseEntity<List<Bond>> getBondsByOwnerId(@RequestParam(name = "ownerId") int ownerId) {
+    private ResponseEntity<List<Bond>> getBondsByOwnerId(@RequestParam(name = "ownerId") int ownerId) {
         List<BondEntity> DbBonds = bondService.getBondsByOwnerId(ownerId);
         List<Bond> bonds = BondMapper.BondEntityToBondMapper(DbBonds);
         return new ResponseEntity<>(bonds, HttpStatus.OK);
@@ -45,7 +45,7 @@ public class BondController {
 
     /**Получить информацию о всех облигациях по id обладателя*/
     @GetMapping("/ownerName")
-    public ResponseEntity<List<Bond>> getBondsByOwnerName(@RequestParam(name = "ownerName") String ownerName) {
+    private ResponseEntity<List<Bond>> getBondsByOwnerName(@RequestParam(name = "ownerName") String ownerName) {
         List<BondEntity> DbBonds = bondService.getBondsByOwnerName(ownerName);
         List<Bond> bonds = BondMapper.BondEntityToBondMapper(DbBonds);
         return new ResponseEntity<>(bonds, HttpStatus.OK);
@@ -53,7 +53,7 @@ public class BondController {
 
     /** Добавление облигации в БД*/
     @PostMapping("/add")
-    public ResponseEntity<?> addBond(@RequestBody BondEntity bond) {
+    private ResponseEntity<?> addBond(@RequestBody BondEntity bond) {
         Map<String, Object> map = new HashMap<>();
         bondService.addBondInfo(bond);
         map.put("success", true);
@@ -61,8 +61,13 @@ public class BondController {
     }
 
     /**Удаление облигации**/
+<<<<<<< HEAD
     @GetMapping("/delete")
     public ResponseEntity<?> deleteBondByBondIdOwnerId(@RequestParam(name = "bondId") int bondId,
+=======
+    @DeleteMapping("/delete")
+    private ResponseEntity<?> deleteBondByBondIdOwnerId(@RequestParam(name = "bondId") int bondId,
+>>>>>>> 726a48c (add gui for get all bonds)
                                                        @RequestParam(name = "ownerId") int ownerId) {
         bondService.deleteBondByOwnerIdBondId(bondId, ownerId);
         return new ResponseEntity<>(HttpStatus.OK);
@@ -70,7 +75,7 @@ public class BondController {
 
     /**Рассчитать дюрацию всех облигаций для пользователя по ownerId*/
     @GetMapping("/calculateDuration")
-    public ResponseEntity<Float> calculateDurationByOwnerId(@RequestParam(name = "ownerId") int ownerId) {
+    private ResponseEntity<Float> calculateDurationByOwnerId(@RequestParam(name = "ownerId") int ownerId) {
         List<BondEntity> bonds = bondService.getBondsByOwnerId(ownerId);
         float duration = Calculation.calculateDuration(bonds);
         return new ResponseEntity<>(duration, HttpStatus.OK);
@@ -78,7 +83,11 @@ public class BondController {
 
     /**Обновить информауию об облигации*/
     @PutMapping("/edit")
+<<<<<<< HEAD
     public ResponseEntity<?> editBondInfo(@RequestBody BondEntity bond) {
+=======
+    private ResponseEntity<?> editBondInfo(@RequestBody BondEntity bond) {
+>>>>>>> 726a48c (add gui for get all bonds)
         Map<String, Object> map = new HashMap<>();
         bondService.editBondInfo(bond);
         map.put("success", true);
