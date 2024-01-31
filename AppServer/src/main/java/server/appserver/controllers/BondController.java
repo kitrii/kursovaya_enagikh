@@ -61,14 +61,9 @@ public class BondController {
     }
 
     /**Удаление облигации**/
-<<<<<<< HEAD
     @GetMapping("/delete")
-    public ResponseEntity<?> deleteBondByBondIdOwnerId(@RequestParam(name = "bondId") int bondId,
-=======
-    @DeleteMapping("/delete")
     private ResponseEntity<?> deleteBondByBondIdOwnerId(@RequestParam(name = "bondId") int bondId,
->>>>>>> 726a48c (add gui for get all bonds)
-                                                       @RequestParam(name = "ownerId") int ownerId) {
+                                                        @RequestParam(name = "ownerId") int ownerId) {
         bondService.deleteBondByOwnerIdBondId(bondId, ownerId);
         return new ResponseEntity<>(HttpStatus.OK);
     }
@@ -83,11 +78,8 @@ public class BondController {
 
     /**Обновить информауию об облигации*/
     @PutMapping("/edit")
-<<<<<<< HEAD
-    public ResponseEntity<?> editBondInfo(@RequestBody BondEntity bond) {
-=======
+
     private ResponseEntity<?> editBondInfo(@RequestBody BondEntity bond) {
->>>>>>> 726a48c (add gui for get all bonds)
         Map<String, Object> map = new HashMap<>();
         bondService.editBondInfo(bond);
         map.put("success", true);

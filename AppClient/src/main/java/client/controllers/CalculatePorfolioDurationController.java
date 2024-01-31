@@ -13,11 +13,7 @@ public class CalculatePorfolioDurationController extends MenuController{
     @FXML
     TextField portfolioDuration;
     @FXML
-<<<<<<< HEAD
-    public void handleCalculateDuration(){
-=======
     private void handleCalculateDuration(){
->>>>>>> 726a48c (add gui for get all bonds)
         String result = api.calculatePortfolio(ownerIdField.getText());
         portfolioDuration.setText(result);
     }

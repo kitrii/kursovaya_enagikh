@@ -1,6 +1,7 @@
 package client.api;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
@@ -15,11 +16,6 @@ public class HttpRequest {
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("GET");
             int responseCode = con.getResponseCode();
-
-<<<<<<< HEAD
-            //Если все хорошо
-=======
->>>>>>> 726a48c (add gui for get all bonds)
             if (responseCode == HttpURLConnection.HTTP_OK) {
                 BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
                 String inputLine;
@@ -77,6 +73,7 @@ public class HttpRequest {
             return null;
         }
     }
+
     public static String sendPut(String urlString, String jsonString) {
         try {
             URL obj = new URL(urlString);
@@ -112,8 +109,7 @@ public class HttpRequest {
             return null;
         }
     }
-<<<<<<< HEAD
-=======
+
     public static String sendDelete(String urlString) {
         try {
             URL url = new URL(urlString);
@@ -143,5 +139,4 @@ public class HttpRequest {
             return null;
         }
     }
->>>>>>> 726a48c (add gui for get all bonds)
 }

@@ -26,11 +26,7 @@ public class EditBondController extends MenuController{
     @FXML
     TextField ownerNameField = new TextField("");
     @FXML
-<<<<<<< HEAD
-    public void initialize() {
-=======
     private void initialize() {
->>>>>>> 726a48c (add gui for get all bonds)
         bondNameField.setText(null);
         bondIdField.setText(null);
         nominalcostField.setText(null);
@@ -42,11 +38,7 @@ public class EditBondController extends MenuController{
         ownerNameField.setText(null);
     }
     @FXML
-<<<<<<< HEAD
-    public void handleEditBond(){
-=======
     private void handleEditBond(){
->>>>>>> 726a48c (add gui for get all bonds)
         api.editBond(
                 bondIdField.getText(),
                 bondNameField.getText(),

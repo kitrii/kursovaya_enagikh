@@ -7,7 +7,6 @@ import server.appserver.entities.BondEntity;
 import server.appserver.operations.BondsTableOperations;
 
 import java.util.List;
-
 @Service
 public class BondService {
 

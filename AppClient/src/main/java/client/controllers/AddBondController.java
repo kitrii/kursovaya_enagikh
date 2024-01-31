@@ -41,11 +41,7 @@ public class AddBondController extends MenuController {
         ownerNameField.setText(null);
     }
     @FXML
-<<<<<<< HEAD
-    public void handleAddBond() {
-=======
     private void handleAddBond() {
->>>>>>> 726a48c (add gui for get all bonds)
         boolean addBondResult = api.addBond(
                 bondIdField.getText(),
                 bondNameField.getText(),

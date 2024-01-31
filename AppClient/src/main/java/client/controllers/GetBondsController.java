@@ -58,11 +58,8 @@ public class GetBondsController extends MenuController{
         this.bondsTableView.setItems(bondsTableValues);
     }
     @FXML
-<<<<<<< HEAD
-    public void handleGetBonds() {
-=======
+
     private void handleGetBonds() {
->>>>>>> 726a48c (add gui for get all bonds)
         // очищаем таблицу
         bondsTableView.getItems().clear();
         //  получаем данные об облигациях из бд (список Bond объектов)
@@ -71,11 +68,7 @@ public class GetBondsController extends MenuController{
         bondsTableValues.addAll(getAllBondsResult);
     }
     @FXML
-<<<<<<< HEAD
-    public void handleGetBondsByOwner() {
-=======
     private void handleGetBondsByOwner() {
->>>>>>> 726a48c (add gui for get all bonds)
         bondsTableView.getItems().clear();
         List<Bond> getBondsByOwnerResult = api.getBondsByOwnerId(ownerId.getText());
         bondsTableValues.addAll(getBondsByOwnerResult);

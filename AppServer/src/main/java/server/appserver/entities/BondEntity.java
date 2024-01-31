@@ -1,5 +1,5 @@
 package server.appserver.entities;
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 
 @Entity

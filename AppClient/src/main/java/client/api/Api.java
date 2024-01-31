@@ -11,11 +11,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-<<<<<<< HEAD
+
 /** Класс Api - связь с сервером по HTTP протоколу*/
-=======
 /** Cвязь с сервером по HTTP*/
->>>>>>> 726a48c (add gui for get all bonds)
 public class Api {
     private final String HOST = "http://localhost:8080";
 
@@ -108,11 +106,7 @@ public class Api {
     /** Удаляем облигацию у определенного владельца */
     public boolean deleteBond(String bondId, String ownerId) {
         String URL = String.format("%s/bonds/delete?bondId=%s&ownerId=%s", HOST, bondId, ownerId);
-<<<<<<< HEAD
-        String response = HttpRequest.sendGet(URL);
-=======
         String response = HttpRequest.sendDelete(URL);
->>>>>>> 726a48c (add gui for get all bonds)
         if (response != null) {
             return true;
         }
